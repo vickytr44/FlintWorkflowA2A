@@ -38,42 +38,9 @@ builder.Services.AddSingleton<ApiKeyCredential>(sp =>
 });
 
 // 4. Register the IChatClient configured for the active provider
-builder.Services.AddSingleton<IChatClient>(sp =>
-{
-    var llmSettings = sp.GetRequiredService<IOptions<LlmSettings>>().Value;
-    var activeSettings = llmSettings.GetActiveSettings();
-    var credential = sp.GetRequiredService<ApiKeyCredential>();
+builder.Services.AddSingleton<IChatClient>(sp => FlintWorkflowBackend.Services.ChatClientProvider.Create(sp));
 
-    var clientOptions = new OpenAIClientOptions
-    {
-        Endpoint = new Uri(activeSettings.Endpoint)
-    };
-
-    var openAiClient = new OpenAIClient(credential, clientOptions);
-
-    return openAiClient
-        .GetChatClient(activeSettings.Model)
-        .AsIChatClient();
-});
-
-// 5. Register the Keyed Singleton AIAgent for Flint chart generation
-const string SystemPrompt = "You are a specialized Data Visualization Agent. Your sole responsibility is to translate user descriptions of data and charting intentions into a valid Flint 'ChartAssemblyInput' JSON specification. Important: You must strictly use ONLY the encoding channels defined for the requested chart type in the following registry:\n\n" + FlintWorkflowBackend.Constants.ChartReference.RegistryJson;
-
-builder.Services.AddKeyedSingleton<AIAgent>("flint-agent", (sp, _) =>
-{
-    var chatClient = sp.GetRequiredService<IChatClient>();
-
-    return chatClient.AsAIAgent(new ChatClientAgentOptions
-    {
-        Name = "flint-agent",
-        Description = "Translates natural language descriptions of data into Flint chart specifications.",
-        ChatOptions = new ChatOptions
-        {
-            Instructions = SystemPrompt,
-            ResponseFormat = ChatResponseFormat.ForJsonSchema<ChartAssemblyInput>()
-        }
-    });
-});
+builder.Services.AddKeyedSingleton<AIAgent>("flint-agent", FlintWorkflowBackend.Services.FlintAgentProvider.Create);
 
 // 6. Register the A2A Server for the flint-agent
 builder.AddA2AServer("flint-agent");
