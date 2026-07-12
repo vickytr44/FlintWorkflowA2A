@@ -1,32 +1,27 @@
-# React + TypeScript + Vite
+# Flint Workflow Frontend
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Welcome to the **Flint Workflow Frontend** repository. This project provides the user interface components and visual presentation for the workflow application. 
 
-Currently, two official plugins are available:
+> [!IMPORTANT]
+> **Architecture Note:** The frontend is currently **not connected to the backend**. It operates independently as a standalone presentation layer (or reference UI) and does not make API calls to the backend service located in this repository.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## Tech Stack
+- **Framework:** React
+- **Language:** TypeScript
+- **Bundler:** Vite
 
-## React Compiler
+## Getting Started
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+To run the frontend locally:
 
-## Expanding the Oxlint configuration
+1. Install dependencies:
+   ```bash
+   npm install
+   ```
+2. Start the development server:
+   ```bash
+   npm run dev
+   ```
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
-
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Development and Linting
+This project uses [Oxlint](https://oxc.rs) for fast and robust linting. You can run the linter using your package manager's standard lint script.
