@@ -1,0 +1,363 @@
+[
+  {
+    "chartType": "Scatter Plot",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "size",
+      "opacity",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Regression",
+    "channels": [
+      "x",
+      "y",
+      "size",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Connected Scatter Plot",
+    "channels": [
+      "x",
+      "y",
+      "order",
+      "color",
+      "detail",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Ranged Dot Plot",
+    "channels": [
+      "x",
+      "y",
+      "color"
+    ]
+  },
+  {
+    "chartType": "Boxplot",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "opacity",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Strip Plot",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "size",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Bar Chart",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "opacity",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Grouped Bar Chart",
+    "channels": [
+      "x",
+      "y",
+      "group",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Stacked Bar Chart",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Lollipop Chart",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Pyramid Chart",
+    "channels": [
+      "x",
+      "y",
+      "color"
+    ]
+  },
+  {
+    "chartType": "Heatmap",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Calendar Heatmap",
+    "channels": [
+      "x",
+      "color"
+    ]
+  },
+  {
+    "chartType": "Line Chart",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "opacity",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Bump Chart",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "detail",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Slope Chart",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "detail",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Area Chart",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "opacity",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Streamgraph",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Range Area Chart",
+    "channels": [
+      "x",
+      "y",
+      "y2",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Pie Chart",
+    "channels": [
+      "size",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Funnel Chart",
+    "channels": [
+      "y",
+      "size"
+    ]
+  },
+  {
+    "chartType": "Treemap",
+    "channels": [
+      "color",
+      "size",
+      "detail"
+    ]
+  },
+  {
+    "chartType": "Sunburst Chart",
+    "channels": [
+      "color",
+      "size",
+      "detail",
+      "group"
+    ]
+  },
+  {
+    "chartType": "Tree",
+    "channels": [
+      "color",
+      "detail",
+      "size"
+    ]
+  },
+  {
+    "chartType": "Histogram",
+    "channels": [
+      "x",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Density Plot",
+    "channels": [
+      "x",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "ECDF Plot",
+    "channels": [
+      "x",
+      "color",
+      "detail",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Parallel Coordinates",
+    "channels": [
+      "color",
+      "detail"
+    ]
+  },
+  {
+    "chartType": "Candlestick Chart",
+    "channels": [
+      "x",
+      "open",
+      "high",
+      "low",
+      "close",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Waterfall Chart",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Gantt Chart",
+    "channels": [
+      "y",
+      "x",
+      "x2",
+      "color",
+      "detail",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Bullet Chart",
+    "channels": [
+      "y",
+      "x",
+      "goal",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Radar Chart",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Rose Chart",
+    "channels": [
+      "x",
+      "y",
+      "color",
+      "column",
+      "row"
+    ]
+  },
+  {
+    "chartType": "Gauge Chart",
+    "channels": [
+      "size",
+      "column"
+    ]
+  },
+  {
+    "chartType": "Sankey Diagram",
+    "channels": [
+      "x",
+      "y",
+      "size"
+    ]
+  },
+  {
+    "chartType": "Network Graph",
+    "channels": [
+      "x",
+      "y",
+      "size"
+    ]
+  }
+]
