@@ -3,7 +3,7 @@ $ErrorActionPreference = "Stop"
 $appSettings = Get-Content -Raw -Path "./appsettings.development.json" | ConvertFrom-Json
 $apiKey = $appSettings.Llm.GoogleAiStudio.ApiKey
 
-$modelsToTest = @("gemini-2.5-flash", "gemini-flash-latest", "gemini-pro-latest", "gemini-3.1-pro-preview", "gemini-omni-flash-preview")
+$modelsToTest = @("gemini-2.5-flash-lite","Gemma-4-26B","gemini-2.5-flash", "Gemini-3-Flash", "gemini-pro-latest", "gemini-3.1-pro-preview", "gemini-omni-flash-preview")
 
 foreach ($modelName in $modelsToTest) {
     Write-Host "Testing model: $modelName"

@@ -41,17 +41,20 @@ builder.Services.AddSingleton<ApiKeyCredential>(sp =>
 builder.Services.AddSingleton<IChatClient>(sp => FlintWorkflowBackend.Services.ChatClientProvider.Create(sp));
 
 builder.Services.AddKeyedSingleton<AIAgent>("flint-agent", FlintWorkflowBackend.Services.FlintAgentProvider.Create);
+builder.Services.AddKeyedSingleton<AIAgent>("chart-recommender-agent", (sp, key) => FlintWorkflowBackend.Services.ChartRecommenderAgentProvider.Create(sp));
 
-// 6. Register the A2A Server for the flint-agent
+// 6. Register the A2A Server for the agents
 builder.AddA2AServer("flint-agent");
+builder.AddA2AServer("chart-recommender-agent");
 
 var app = builder.Build();
 
 // 7. Setup Routing
 app.UseRouting();
 
-// 8. Map A2A endpoints for the flint-agent
+// 8. Map A2A endpoints
 app.MapA2AHttpJson("flint-agent", "/a2a/flint-agent");
+app.MapA2AHttpJson("chart-recommender-agent", "/a2a/chart-recommender-agent");
 
 // 9. Map Well-Known Agent Card for A2A Discovery
 app.MapWellKnownAgentCard(new AgentCard

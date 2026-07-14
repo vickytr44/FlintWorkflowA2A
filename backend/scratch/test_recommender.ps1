@@ -26,7 +26,7 @@ $body = @{
     }
 } | ConvertTo-Json -Depth 5
 
-$messageUri = "http://localhost:5000/a2a/flint-agent/message:stream"
+$messageUri = "http://localhost:5000/a2a/chart-recommender-agent/message:stream"
 
 Write-Host "Sending request to $messageUri" -ForegroundColor Cyan
 try {
