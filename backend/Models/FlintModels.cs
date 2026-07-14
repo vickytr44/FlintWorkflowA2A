@@ -195,3 +195,22 @@ public class AssembleOptions
     [Description("Target aspect ratio for a single band (step height ÷ step width).")]
     public double? TargetBandAR { get; set; }
 }
+
+[Description("The output schema containing a list of recommended chart types based on data analysis.")]
+public class ChartRecommendationOutput
+{
+    [JsonPropertyName("recommendations")]
+    public List<ChartRecommendation> Recommendations { get; set; } = new();
+}
+
+[Description("A specific chart recommendation with rationale.")]
+public class ChartRecommendation
+{
+    [JsonPropertyName("chartType")]
+    [Description("The recommended chart type (e.g., Bar Chart, Scatter Plot).")]
+    public string ChartType { get; set; } = string.Empty;
+
+    [JsonPropertyName("reason")]
+    [Description("An explanation of why this chart type is suitable for the given data.")]
+    public string Reason { get; set; } = string.Empty;
+}

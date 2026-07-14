@@ -61,6 +61,15 @@ app.MapWellKnownAgentCard(new AgentCard
     Version = "1.0.0",
     DefaultInputModes = new List<string> { "text" },
     DefaultOutputModes = new List<string> { "text" },
+    Skills = new List<A2A.AgentSkill>
+    {
+        new A2A.AgentSkill
+        {
+            Id = "recommend_chart_types",
+            Name = "Chart Recommender",
+            Description = "Analyzes data and suggests appropriate chart types."
+        }
+    },
     SupportedInterfaces = new List<AgentInterface>
     {
         new AgentInterface

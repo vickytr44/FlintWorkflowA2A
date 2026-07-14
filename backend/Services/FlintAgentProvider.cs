@@ -14,6 +14,8 @@ public static class FlintAgentProvider
     {
         var chatClient = sp.GetRequiredService<IChatClient>();
 
+        var recommenderAgent = ChartRecommenderAgentProvider.Create(sp);
+
         return chatClient.AsAIAgent(new ChatClientAgentOptions
         {
             Name = "flint-agent",
@@ -21,7 +23,8 @@ public static class FlintAgentProvider
             ChatOptions = new ChatOptions
             {
                 Instructions = SystemPrompt,
-                ResponseFormat = ChatResponseFormat.ForJsonSchema<ChartAssemblyInput>()
+                ResponseFormat = ChatResponseFormat.ForJsonSchema<ChartAssemblyInput>(),
+                Tools = [recommenderAgent.AsAIFunction()]
             }
         });
     }
