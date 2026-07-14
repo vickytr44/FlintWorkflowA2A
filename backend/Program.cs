@@ -64,15 +64,6 @@ app.MapWellKnownAgentCard(new AgentCard
     Version = "1.0.0",
     DefaultInputModes = new List<string> { "text" },
     DefaultOutputModes = new List<string> { "text" },
-    Skills = new List<A2A.AgentSkill>
-    {
-        new A2A.AgentSkill
-        {
-            Id = "recommend_chart_types",
-            Name = "Chart Recommender",
-            Description = "Analyzes data and suggests appropriate chart types."
-        }
-    },
     SupportedInterfaces = new List<AgentInterface>
     {
         new AgentInterface
@@ -83,6 +74,23 @@ app.MapWellKnownAgentCard(new AgentCard
         }
     }
 }, "");
+app.MapWellKnownAgentCard(new AgentCard
+{
+    Name = "ChartRecommenderAgent",
+    Description = "Analyzes data and suggests appropriate chart types.",
+    Version = "1.0.0",
+    DefaultInputModes = new List<string> { "text" },
+    DefaultOutputModes = new List<string> { "text" },
+    SupportedInterfaces = new List<AgentInterface>
+    {
+        new AgentInterface
+        {
+            Url = "http://localhost:5000/a2a/chart-recommender-agent",
+            ProtocolBinding = ProtocolBindingNames.HttpJson,
+            ProtocolVersion = "1.0"
+        }
+    }
+}, "chart-recommender-agent");
 
 app.Lifetime.ApplicationStarted.Register(() =>
 {
@@ -104,8 +112,10 @@ app.Lifetime.ApplicationStarted.Register(() =>
     Console.ForegroundColor = ConsoleColor.Green;
     Console.WriteLine("\n🚀 Flint A2A Agent Backend is running at http://localhost:5000");
     Console.WriteLine($"   Active LLM Provider: {llmSettings.Provider} (Model: {activeSettings.Model})");
-    Console.WriteLine("   Exposing A2A HTTP JSON endpoint at: http://localhost:5000/a2a/flint-agent");
-    Console.WriteLine("   Exposing A2A Agent Card endpoint at: http://localhost:5000/.well-known/agent-card.json");
+    Console.WriteLine("   Exposing Flint Agent HTTP JSON endpoint at: http://localhost:5000/a2a/flint-agent");
+    Console.WriteLine("   Exposing Flint Agent Card endpoint at: http://localhost:5000/.well-known/agent-card.json");
+    Console.WriteLine("   Exposing Chart Recommender Agent HTTP JSON endpoint at: http://localhost:5000/a2a/chart-recommender-agent");
+    Console.WriteLine("   Exposing Chart Recommender Agent Card endpoint at: http://localhost:5000/chart-recommender-agent/.well-known/agent-card.json");
     Console.ResetColor();
 });
 
